@@ -1,89 +1,1295 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Mobileappdevelopmentpresentation : Mobile development strategies - The Good, the Bad and the Uglies" />
+	<head>
+		<meta charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<title>Mobile App Development</title>
 
-    <title>Mobileappdevelopmentpresentation</title>
-  </head>
+		<meta name="description" content="Mobile development strategies - The Good, the Bad and the Uglies....">
+		<meta name="author" content="Davy De Waele">
 
-  <body>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ddewaele/MobileAppDevelopmentPresentation">View on GitHub</a>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-          <h1 id="project_title">Mobileappdevelopmentpresentation</h1>
-          <h2 id="project_tagline">Mobile development strategies - The Good, the Bad and the Uglies</h2>
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ddewaele/MobileAppDevelopmentPresentation/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ddewaele/MobileAppDevelopmentPresentation/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style>
+		
+			table.table-bordered th, 
+			table.table-bordered td
+			{
+				border: 1px solid black;
+			}
+	
+			table.table-bordered
+			{
+				width : 100%;
+				border: 1px solid black;
+			}
+			
+			/* Table 1 Style */
+			table.table1{
+				font-family: "Trebuchet MS", sans-serif;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 1.4em;
+				font-style: normal;
+				border-collapse:separate;
+			}
+			.table1 thead th{
+				padding:15px;
+				color:#fff;
+				text-shadow:1px 1px 1px #568F23;
+				border:1px solid #93CE37;
+				border-bottom:3px solid #9ED929;
+				background-color:#9DD929;
+				background:-webkit-gradient(
+					linear,
+					left bottom,
+					left top,
+					color-stop(0.02, rgb(123,192,67)),
+					color-stop(0.51, rgb(139,198,66)),
+					color-stop(0.87, rgb(158,217,41))
+					);
+				background: -moz-linear-gradient(
+					center bottom,
+					rgb(123,192,67) 2%,
+					rgb(139,198,66) 51%,
+					rgb(158,217,41) 87%
+					);
+				-webkit-border-top-left-radius:5px;
+				-webkit-border-top-right-radius:5px;
+				-moz-border-radius:5px 5px 0px 0px;
+				border-top-left-radius:5px;
+				border-top-right-radius:5px;
+			}
+			.table1 thead th:empty{
+				background:transparent;
+				border:none;
+			}
+			.table1 tbody th{
+				color:#fff;
+				text-shadow:1px 1px 1px #568F23;
+				background-color:#9DD929;
+				border:1px solid #93CE37;
+				border-right:3px solid #9ED929;
+				padding:0px 10px;
+				background:-webkit-gradient(
+					linear,
+					left bottom,
+					right top,
+					color-stop(0.02, rgb(158,217,41)),
+					color-stop(0.51, rgb(139,198,66)),
+					color-stop(0.87, rgb(123,192,67))
+					);
+				background: -moz-linear-gradient(
+					left bottom,
+					rgb(158,217,41) 2%,
+					rgb(139,198,66) 51%,
+					rgb(123,192,67) 87%
+					);
+				-moz-border-radius:5px 0px 0px 5px;
+				-webkit-border-top-left-radius:5px;
+				-webkit-border-bottom-left-radius:5px;
+				border-top-left-radius:5px;
+				border-bottom-left-radius:5px;
+			}
+			.table1 tfoot td{
+				color: #9CD009;
+				font-size:32px;
+				text-align:center;
+				padding:10px 0px;
+				text-shadow:1px 1px 1px #444;
+			}
+			.table1 tfoot th{
+				color:#666;
+			}
+			.table1 tbody td{
+				padding:10px;
+				text-align:center;
+				background-color:#DEF3CA;
+				border: 2px solid #E7EFE0;
+				-moz-border-radius:2px;
+				-webkit-border-radius:2px;
+				border-radius:2px;
+				color:#666;
+				text-shadow:1px 1px 1px #fff;
+			}
+			.table1 tbody span.check::before{
+				content : url(../images/check0.png)
+			}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Mobile Application Development</h1>
+					<h3>The Good, the Bad and the Uglies....</h3>
+					<p>
+						<small>Created by <a href="http://about.me/ddewaele">Davy De Waele</a> / <a href="http://twitter.com/ddewaele">@ddewaele</a></small>
+					</p>
+				</section>
+
+					<section>
+						<h2>Table of contents</h2>
+						<ol>
+							<li class="fragment">History</code></li>
+							<li class="fragment">What is a mobile application</li>
+							<li class="fragment">Different ways of developing mobile applications</li>
+							<li class="fragment">Case studies</li>
+							<li class="fragment">Conclusions & QA</li>
+						</ol>
+
+					</section>
+				
+				
+				<section>
+					<h2>History</h2>
+					<p>It all started with .....</p>
+					
+					<img src="./images/IPhone_2G_PSD_Mock.png" alt="iPhone 2G" border="0">
+
+				</section>
+				
+				<section>
+					<h2>History</h2>
+					<p>iPhone was released on <b>June 29, 2007</b> with the plans to have it <i>"run applications created with Web 2.0 Internet standards"</i> </p>
+
+				</section>
+
+				<section>
+					<h2>History</h2>
+
+					<blockquote>
+						&ldquo;Developers can create Web 2.0 applications which look and behave just like the applications built into iPhone, and which can seamlessly access iPhone’s services, including making a phone call, sending an email and displaying a location in Google Maps. Third-party applications created using Web 2.0 standards can extend iPhone’s capabilities without compromising its reliability or security.&rdquo;
+					</blockquote>
+
+				</section>
+				
+				
+				<section>
+					<h2>History</h2>
+
+					<ul>
+					<li>The iPhone SDK was officially announced and released on <b>March 6, 2008</b></li>
+					<li>SDK is a  set of tools based on the existing development tools for mac</li>
+					<li>It allows developers to develop <b>native applications</b> for the iPhone and iPod Touch, then test them in an "iPhone simulator". </li>
+					</ul>					
+				
+				</section>				
+
+
+				<section>
+					<h2>History</h2>
+					<ul>
+					<li>Android 1.0 SDK, release 1 was announced on 23 September 23, 2008</li>
+					<li>First Android phone, the T-Mobile G1 was released on <b>October 22, 2008</b> together with the <b>Android Market</b>.</i> 
+					<li>Funny in retrospect :</li>
+					</ul>
+					<blockquote>
+						&ldquo;There are already over 50 apps available in Android Market today.&rdquo;
+					</blockquote>
+					
+				</section>
+
+				<section>
+					<h2>What is a mobile app ?</h2>
+					<p>&nbsp;</p>
+					<img src="./images/ads.png" alt="American Dialect Society" border="0" style="float:right">
+					
+					<p><strong>"App" was Word of the Year in 2010</strong></p>
+					<p>&nbsp;</p>
+					<p class="fragment"><em >an abbreviated form of application, a software program for a computer or phone operating system</em></p>
+					
+					<p>&nbsp;</p>
+					<p class="fragment" style="float:left">
+					A software application designed to run on smartphones, tablet computers and other mobile devices. 
+					They are usually available through application distribution platforms, which are typically operated by the owner of the mobile operating system
+					</p>
+					
+				</section>				
+
+				<section>
+					<h2>Characteristics</h2>
+					<p>What are the characteristics of an app ?</p>
+						<ol>
+							<li class="fragment">Software</li>
+							<li class="fragment">Distribution</li>
+							<li class="fragment">Mobile devices</li>
+							<li class="fragment">Mobile operation system</li>
+						</ol>
+
+				</section>
+		
+				<section>
+					<h2>1. Software</h2>
+						<ul>
+							<li class="fragment">Mobile applications have traditionally been written for a particular mobile platform</li>
+							<li class="fragment">This is what we call <b>Native</b> applications</li>
+							<li class="fragment">In the early days, open web standards weren't up to standard to facilitate mobile development</li>
+						</ul>
+
+				</section>				
+				
+			<section>
+					<h2>2. Distribution</h2>
+					<p>Mobile platforms like Android, iOS, Windows Phone and Blackberry come with their own distribution platforms</p>
+
+					<table>
+					<tr>
+						<td><img  class="fragment" src="./images/app_store.png"  border="0"></td>
+						<td><img  class="fragment" src="./images/google_play.jpg"  border="0"></td>
+					</tr>
+					<tr>
+						<td><img  class="fragment" src="./images/windows_phone.png"  border="0"></td>
+						<td><img  class="fragment" src="./images/blackberry_appworld.jpg"  border="0"></td>
+					</tr>
+					</table>
+					
+			</section>				
+				
+			<section>
+					<h2>3. Mobile Devices</h2>
+					<p>Software that needs to run on a range of mobile devices.</p>
+					<p class="fragment">If you're only targeting iOS you're in luck.</p>
+
+					<img  class="fragment" src="./images/pile-of-iphones.jpg" alt="apple devices" border="0">
+
+			</section>		
+			
+			<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+					<h2>3. Mobile Devices</h2>
+					<p>Android however is a different story...</p>
+
+					<img  class="fragment" src="./images/pile-of-androids.jpg" alt="apple devices" border="0">
+
+			</section>		
+			
+
+				
+			<section data-background="#007777">
+				<h2>Mobile Development is hard</h2>
+				<p>
+					Regardless on how you develop mobile applications, some common problems are :
+				</p>
+				<ul class="fragment">
+					<li>Multiple platforms</li>
+					<li>Multiple form factors</li>					
+					<li>Multiple screens sizes / resolutions</li>					
+					<li>Multiple webkit versions</li>					
+				</ul>
+			</section>
+
+
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>When building mobile applications, you'll potentially need to target multiple platforms</p>
+				<img src="./images/MobileOSCombo.jpg"  border="0">
+		
+			</section>	
+			
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>Even for the same platform there might be differences. If this is iOS 6</p>
+				
+				<img src="./images/ios6_funny.png"  border="0">
+		
+			</section>	
+
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>Then this must be iOS 7</p>
+				
+				<img src="./images/ios7_funny.png"  border="0">
+		
+			</section>	
+			
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>Seriously.....</p>
+				<img src="./images/ios6-ios7-difference2.png"  border="0">
+		
+			</section>	
+			
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>But iOS / Android / Windows remain very distinct platforms</p>
+				<img src="./images/android-design1.png"  border="0">
+
+			</section>				
+			
+			<section  data-background="../images/mobile-os.jpg">
+				<h2>Multiple platforms</h2>
+				<p>Android Holo Look</p>
+				<img src="./images/android-holo-look.png"  border="0">
+		
+			</section>				
+			
+			
+			
+			<section>
+				<h2>Multiple platform versions</h2>
+				<p>For each particular platform, multiple versions of that platform are in the running</p>
+				<img src="./images/android-chart.png" style="background:#ffffff" border="0">
+				<img src="./images/ios-chart.png" style="background:#ffffff" border="0">				
+			</section>			
+			
+			
+			<section data-background="../images/MacBookEeePCNintendoDS.jpg">
+				<h2>Multiple form factors</h2>
+				<img src="./images/response_app_design.png"/>
+			</section>	
+			
+			
+			<section data-background="../images/MacBookEeePCNintendoDS.jpg">
+				<h2>Multiple form factors</h2>
+				<p>If you expect your application to run on different form factors (phones / tablets / TVs / ...) you have to ask yourself</p>
+				<ul>
+				<li>Deploy a single UI that stretches or scales-up on larger form factors tablets</li>
+				<li>Deploy a tablet-optimized UI that takes advantage of larger tablet screens</li>
+				</ul>
+			</section>	
+			
+			
+
+			
+			<section data-background="../images/MacBookEeePCNintendoDS.jpg">
+				<h2>Multiple form factors</h2>
+				<p>Great example of a scale-up-UI (the Twitter app on a tablet not so long ago)</p>
+				<img src="./images/twitter-tablet-old.png"/>
+				<p>As you can see, the UI is simply stretched on the additional screen real-estate.</p>
+			</section>							
+
+			<section data-background="../images/MacBookEeePCNintendoDS.jpg">
+				<h2>Multiple form factors</h2>
+				<p>Tablet-optimized UI (the new Twitter app on a tablet)</p>
+				<img src="./images/twitter-tablet-new.jpg"/>
+				<p>As you can see, the UI is now optimized for the additional screen real-estate.</p>
+			</section>							
+
+			
+			<section data-background="../images/screen-sizes.jpg">
+				<h2>Multiple screen sizes</h2>
+
+				<p>When building mobile applications, you'll be confronted with multiple screens sizes. 
+				ex: Samsung currently ships the following displays :</p>
+				
+				<table class="table-bordered">
+					<tr><td>2.8</td><td>3.14</td><td>3.2</td><td>3.4</td><td>3.5</td></tr>
+					<tr><td>3.6</td><td>3.65</td><td>3.7</td><td>3.97</td><td>4</td></tr>
+					<tr><td>4.2</td><td>4.27</td><td>4.3</td><td>4.5</td><td>4.52</td></tr>
+					<tr><td>4.65</td><td>4.8</td><td>5</td><td>5.3</td><td>5.5</td></tr>
+					<tr><td>5.8</td><td>6.3</td><td>7</td><td>7.7</td><td>8</td></tr>
+					<tr><td>10</td><td>10.1</td></tr>
+				</table>				
+			</section>			
+				
+	
+			
+			<section data-background="../images/screen-sizes.jpg">
+				<h2>Multiple screen resolutions</h2>
+
+				<p>Same with the resolutions:</p>
+				
+				<table class="table-bordered">		
+					<tr>				
+						<td>QVGA (240x320)</td>		
+						<td>480x640</td>	
+						<td>WQVGA400 (240x400)</td>
+						<td>WQVGA432 (240x432)</td>	
+						<td>HVGA (320x480)</td>	
+					</tr><tr>	
+						<td>WVGA800 (480x800)</td> 
+						<td>WVGA854 (480x854)</td> 
+						<td>600x1024</td>
+						<td>640x960</td>
+						<td>WVGA800** (480x800)</td> 
+					</tr><tr>				
+						<td>WVGA854** (480x854)</td>	
+						<td>WVGA800* (480x800)</td> 
+						<td>WVGA854* (480x854)</td> 
+						<td>600x1024</td>		
+						<td>1024x600</td>	
+					</tr><tr>				
+						<td>WXGA (1280x800)</td>
+						<td>1024x768</td>
+						<td>1280x768</td>	
+						<td>1536x1152</td>
+						<td>1920x1152</td> 
+					</tr><tr>				
+						<td>1920x1200</td>	
+						<td>2048x1536</td>
+						<td>2560x1536</td> 
+						<td>2560x1600</td>
+					</tr>					
+				</table>					
+			</section>					
+	
+			<section data-background="../images/battle-of-the-best-browsers-header.jpg">
+				<h2>Multiple WebKit versions</h2>
+				<p>On Android : </p>
+				<table class="table-bordered">		
+					<tr><td>Android 2.1</td><td>530.17</td><tr>
+					<tr><td>Android 2.2/2.3</td><td>533.1</td><tr>
+					<tr><td>Android 3.2.1</td><td>534.13</td><tr>
+					
+					<tr><td>Android 4.x</td><td>534.30</td><tr>
+					
+					<tr><td>18.0.1025.166</td><td>535.19</td><tr>
+					<tr><td>25.0.1364.123</td><td>537.22</td><tr>
+					<tr><td>26.0.1410.58</td><td>537.31</td><tr>
+					<tr><td>27.0.1453.90</td><td>537.36</td><tr>
+					<tr><td>28.0.1500.94</td><td>537.36</td><tr>
+					<tr><td>29.0.1547.59</td><td>537.36</td><tr>			
+				</table>	
+			</section>		
+
+
+	
+			<section data-background="../images/battle-of-the-best-browsers-header.jpg">
+				<h2>Multiple WebKit versions</h2>
+				<p>On iOS : </p>
+
+				<table class="table-bordered">					
+					<tr><td>6.x</td><td>8536.25</td><td>536.26</td><tr>			
+					<tr><td>5.x</td><td>7534.48.3</td><td>534.46</td><tr>			
+					<tr><td>4.2 - 4.3</td><td>	6533.18.5</td><td>533.17.9</td><tr>			
+					<tr><td>4.0</td><td>6531.22.7</td><td>532.9</td><tr>			
+					<tr><td>3.2.x</td><td>531.21.10</td><td>531.21.10</td><tr>			
+					<tr><td>3.0 - 3.1</td><td>528.16</td><td>528.16</td><tr>			
+				</table>
+			</section>
+			
+		<section data-background="../images/mobile-app-native-hybrid-web.png">
+				<h2>So how to build mobile apps ?</h2>
+
+					<p>There are 3 major categories of mobile apps :</p>
+					<ul>
+						<li>Native apps</li>
+						<li>Mobile web apps</li>
+						<li>Hybrid apps</li>
+					</ul>
+					
+			</section>
+			
+			<section data-background="#007777">
+					<h2>Native Development : What </h2>
+					
+						<ul>
+							<li>Development is done for a specific platform.</li>
+							<li>Uses the tools offered by the platform.</li>
+							<li>Can only run on the platform they are designed for.</li>
+							<li>Unlocks the full potential of the platform.</li>
+						</ul>
+			</section>
+			
+			<section>
+					<h2>Native Development : What </h2>
+					
+						<img src="./images/native_overview.png"  border="0">
+
+			</section>
+				
+			<section>
+					<h2>Native Development flow</h2>
+
+					<img src="./images/native_flow3.png"  border="0">
+
+			</section>	
+
+			<section>
+					<h2>Native Development Tools</h2>
+					
+					<p>The advantage of the native platform is that you have access to quality tools for :</p>
+					<ul>
+						<li>Developing</li>
+						<li>Debugging</li>
+						<li>Profiling</li>
+					</ul>
+			</section>
+			
+			<section>
+					<h2>Native Development : Debugging</h2>
+					
+						<img src="./images/ios-debugging.png"  border="0">
+				
+			</section>
+
+			<section>
+					<h2>Native Development : Profiling</h2>
+					
+						<img src="./images/ios-profiling.png"  border="0">
+			
+			</section>
+
+			<section>
+					<h2>Native Development : Profiling</h2>
+					
+						<img src="./images/ios-profiling2.png"  border="0">
+
+			</section>
+
+				<section>
+					<h2>Native Development Summary</h2>
+				
+				
+				<table class="table1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope="col" abbr="Starter">Android</th>
+                        <th scope="col" abbr="Medium">iOS</th>
+                        <th scope="col" abbr="Business">Windows Phone</th>
+                        <th scope="col" abbr="Deluxe">Blackberry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="fragment" >
+                        <th scope="row">IDE</th>
+                        <td>Eclipse ADT / Android Studio</td>
+                        <td>XCode</td>
+                        <td>Visual Studio</td>
+                        <td>BlackBerry IDE</td>
+                    </tr>
+                    <tr class="fragment" >
+                        <th scope="row">Languages</th>
+                        <td>Java / C++</td>
+                        <td>Objective-C</td>
+                        <td>C# / VB.NET</td>
+                        <td>Java / C++</td>
+                    </tr>
+                    <tr class="fragment" >
+                        <th scope="row">Distribution</th>
+                        <td>Google Play</td>
+                        <td>App Store</td>
+                        <td>Windows Phone Store</td>
+                        <td>Blackberry World</td>
+                    </tr>
+                    <tr class="fragment" >
+                        <th scope="row">Smartphone Sales</th>
+                        <td>79 %</td>
+                        <td>13.2 %</td>
+                        <td>3.7 %</td>
+                        <td>2.9 %</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+				</section>
+
+
+			<section>
+					<h2>Native Development : Why </h2>
+					
+						<ul>
+							<li>You don't want to compromise performance / look and feel / platform affinity</li>
+							<li>You only need to support a single or limited amount of platforms</li>
+							<li>You have in-house knowledge of the platform</li>
+							<li>You want to have easy distribution via an AppStore</li>
+							<li>You're building a graphics intensive application or game</li>
+						</ul>
+
+			</section>
+	
+			<section>
+					<h2>Native Development : Pros</h2>
+			
+						<ul>			
+						<li>Consistent look and feel. </li>
+						<li>Fits right in with the rest of the apps.</li>
+						<li>Smooth and fast UI. No stuttering</li>
+						<li>Taps into the full potential of the phone.</li>
+						<li>Native tools available for developing / validating / debugging.</li>
+						</ul>
+
+			</section>
+
+			<section>
+					<h2>Native Development : Cons</h2>
+			
+						<ul>
+						<li>Not cross-platform. You need to start from scratch for each platform.</li>
+						<li>Requires different mobile platform experts.</li>
+						<li>Understanding of each mobile platform and its APIs is required.</li>
+						<li>Requires different toolsets per platform.</li>
+						<li>Requires different testing cycles per platform.</li>						
+						</ul>			
+			</section>
+				
+				
+
+			
+			<section data-background="#007777">
+					<h2>Mobile Web apps : What ?</h2>
+			
+						<ul>
+							<li>Entirely written using web technologies (HTML/CSS/JavaScript)</li>							
+							<li>Write once and run on multiple platforms</li>							
+							<li>Run inside the browser</li>							
+							<li>Iterate quickly - everything stored on the server</li>
+							<li>Not distributed through an AppStore</li>		
+						</ul>			
+			</section>	
+
+
+			<section>
+					<h2>Mobile Web apps : What </h2>
+					
+						<img src="./images/webapp_overview.png"  border="0">
+
+			</section>
+			
+			<section>
+					<h2>Mobile Web apps : Why ?</h2>
+			
+						<ul>
+							<li>You already have a site using responsive design.</li>
+							<li>You don't have the resources at hand to support different platforms</li>
+							<li>You are not interested in AppStore distribution</li>
+						</ul>			
+			</section>				
+
+
+			<section>
+					<h2>Mobile WebApps : Pros</h2>
+
+					<ul>
+						<li>Use standard web technologies—typically HTML5, JavaScript and CSS.
+						<li>Adding features seamlessly. Write once & deploy immediately
+						<li>No app store approval process, no development cycles for multiple platforms
+					</ul>
+			</section>	
+								
+
+			<section>
+					<h2>Mobile WebApps : Cons</h2>
+
+					<ul>
+						<li>Fragmentation challenges (Webkit versions)</li>
+						<li>Performance of Javascript Engines</li>
+						<li>Limitations (session management, secure offline storage)</li>
+						<li>No or very limited access to native device functionality (camera, calendar, geolocation, etc.)</li>
+					</ul>
+ 
+			</section>	
+
+			<section>
+					<h2>Mobile Web apps Frameworks</h2>
+					
+					<p>To build mobile web apps, you'll also need a framework and a set of tools</p>
+						<ul>
+							<li>JQuery Mobile (JQM)</li>
+							<li>Sencha Touch</li>							
+						</ul>			
+			</section>	
+
+
+			<section>
+					<h2>jQueryMobile</h2>
+			
+						<ul>
+							<li>DOM centric. Not javascript centric</li>
+							<li>Very classic HTML approach</li>							
+							<li>Attribute-driven</li>
+							<li>HTML components / wrappers</li>
+							<li>No higher-level MVC framework</li>							
+							<li>Performance issues (animations on Android)</li>														
+						</ul>			
+			</section>	
+			
+			<section>
+					<h2>jQueryMobile</h2>
+					<iframe width="560" height="315" src="http://www.youtube.com/embed/MbtUc0L_UUA?list=UU5IDcgLgmrgRhAoTsPk7KpQ" frameborder="0" allowfullscreen></iframe>
+			</section>	
+
+			<section>
+					<h2>jQueryMobile HTML</h2>
+<pre><code data-trim contenteditable>
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>List</h1>
+	</div>
+	<div data-role="content" id="wrapper">	
+		<ul id="mylist" data-role="listview">
+				... list will come here.	
+		</ul>
+	</div>
+	<div data-role="footer">
+		Footer
+	</div>
+</div>
+
+</code></pre>	
+</section>	
+
+<section>
+					<h2>jQueryMobile Javascript</h2>
+<pre><code data-trim contenteditable>
+
+$(document).ready(function(e)
+{
+	getData();
+});
+
+function getData() {
+	$.ajax({type: "GET",
+			url: "http://someUrl",
+			data : "callback",
+			dataType: "jsonp",
+			success : function(result)
+			{
+				console.log("success");
+				var list = $("#mylist");
+				// do something
+			}
+		}
+
+	)
+}
+</code></pre>	
+</section>	
+
+			<section>
+					<h2>Sencha Touch</h2>
+			
+						<ul>
+							<li>Javascript centric. (ExtJS framework)</li>
+							<li>Little markup, lots of javascript</li>
+							<li>Explicit and rich component model</li>
+							<li>Includes a high-level MVC framework</li>
+						</ul>			
+			</section>			
+			
+			
+			<section>
+					<h2>Sencha Touch HTML</h2>
+<pre><code data-trim contenteditable>
+
+<body></body>
+
+</code></pre>	
+
+<p class="fragment">
+That's right ... no HTML ... only JavaScript.
+</p>
+</section>	
+
+<section>
+					<h2>Sencha Touch Javascript</h2>
+<pre><code data-trim contenteditable>
+
+Ext.setup({
+	onReady : function()
+	{
+	
+	var store = Ext.create('Ext.data.Store', {
+		model: 'User',
+		proxy: {
+			type: 'jsonp',
+			url : 'http://someData',
+			callbackKey: 'theCallbackFunction'
+		}
+	});
+	
+	store.load();
+
+	var panel;
+	var simplelist;
+	
+	simplelist = new Ext.Component(
+	{
+			title : "simplelist",
+			tpl: [
+				'<tpl for=".">',
+				'<div class="tweet">',
+						'<h2 id="tweetheading">{item}</h2>',
+						'<p id="tweettext">{item}</p>',
+				'</div>',
+				'</tpl>'
+				 ]
+	}),
+	panel = new Ext.TabPanel
+	(
+			{
+				fullscreen :true,
+				animation : "slide",
+				items : [simplelist]
+			}
+	)
+	displayList = function()
+	{
+		var sampleitem = {item: "I am Harish"}
+		simplelist.update([sampleitem, sampleitem])
+	}
+	displayList();
+	}
+}
+)
+</code></pre>	
+</section>			
+
+			<section>
+					<h2>Sencha Touch : Pros</h2>
+						<ul>
+							<li>Feature-rich JS framework</li>
+							<li>True MVC</li>
+							<li>Built-in layouts / components</li>							
+							<li>Elaborate software suite</li>														
+							<li>Faster / smoother than jQueryMobile</li>
+						</ul>			
+			</section>	
+
+			<section>
+					<h2>Sencha Touch : Cons</h2>
+			
+						<ul>
+							<li>High learning curve</li>
+							<li>Proprietary framework : lock-in</li>
+							<li>Lots of boilerplating</li>							
+							<li>Debugging can be difficult</li>							
+						</ul>			
+			</section>	
+
+			<section data-background="#007777">
+				<h2>Building Hybrid apps using PhoneGap</h2>
+			</section>
+			
+			
+			<section>
+					<h2>Hybrid Development Flow </h2>
+					
+						<img src="./images/hybrid_flow.png"  border="0">
+
+			</section>			
+			
+			
+			<section>
+					<h2>Hybrid Development : Why </h2>
+					
+						<ul>
+							<li>You have in-house expertise for HTML / JS / CSS</li>
+							<li>You are interested in going cross-platform.</li>
+							<li>You don't want to maintain separate code-bases.</li>
+							<li>You don't want to write in both Java / Objective-C and C#</li>
+							<li>You still want AppStore distribution.</li>
+							<li>You want your app to look like a native app.</li>
+						</ul>
+
+			</section>				
+				
+			<section>
+					<h2>Hybrid Development : Pros</h2>
+			
+						<ul>			
+							<li>Single codebase for multiple platforms.</li>
+							<li>Lean and flexible. Apps can be updated on the fly.</li>
+							<li>Perfect for prototyping</li>
+							<li>Lots of frameworks of choose from</li>
+							<li>Single development toolset can be chosen for all platforms.</li>
+						</ul>
+
+			</section>
+
+			<section>
+					<h2>Hybrid Development : Cons</h2>
+			
+						<ul>
+							<li>Lots of frameworks</li>
+							<li>Getting an experience that is consistent with the app platform is difficult.</li> 
+							<li>Lack of tooling for debugging / profiling / validating / ....</li>
+							<li>Differences in web standards across browsers / platforms</li>							
+						</ul>			
+			</section>				
+
+				<section>
+					<h2>PhoneGap</h2>
+					<p>
+						<ul>
+							<li>What is PhoneGap</li>
+							<li>How does it work</li>
+							<li>PhoneGap Build</b>
+							<li>Pros / Cons</li>
+							<li>Examples</li>
+							<li>Live Demo</li>
+						</ul>							
+					</p>
+				</section>
+				
+
+				<section>
+					<h2>PhoneGap - What is it ?</h2>
+					<p>
+						<ul>
+							<li>PhoneGap is a free and open source mobile development framework</li>
+							<li>Allows you to create mobile apps using standardized web APIs (HTML / CSS / JS)</li>
+							<li>Supports all major platforms (Android, iOS , Windows Phone , Blackberry, Bada, Symbian, WebOS)</li>
+							<li>Originally developed by Nitobi Software, recently acquired by Adobe</li>
+							<li>PhoneGap is a distribution of Apache Cordova. (Apache Cordova is the engine that powers PhoneGap)</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>PhoneGap - How does it work ?</h2>
+					<p>
+						<ul>
+							<li>Using web APIs (HTML / CSS / JS) to build the core of your application</li>
+							<li>PhoneGap acts as a <b>bridge</b> between your web-based layer and the native layer</li>
+							<li>Allows you to access native features through <b>plugins</b></li>
+							<li>Generates a <b>native</b> application with an embedded webview</li>
+						</ul>
+					</p>
+				</section>
+				
+				<section>
+					<h2>PhoneGap Build</h2>
+					<p>
+						<ul>
+							<li>PhoneGap also comes with an online cloud-based build platform</li>
+							<li>built on top of the PhoneGap framework</li>
+							<li>Upload your code to PhoneGap build, and have it build native applications for you</li>
+							<li>No need to have the platform specific build tools. Takes care of provisioning / certificates for you...</li>
+						</ul>
+					</p>
+				</section>		
+				
+						
+
+				<section>
+					<h2>PhoneGap Build</h2>
+					<p>Stability issues</p>
+					<img src="./images/phonegap-stability.png"/>
+				</section>
+
+
+
+			<section>
+					<h2>PhoneGap - Installation</h2>
+<pre><code data-trim contenteditable>
+$ sudo npm install -g phonegap
+npm http GET https://registry.npmjs.org/phonegap
+npm http 200 https://registry.npmjs.org/phonegap
+npm http GET https://registry.npmjs.org/phonegap/-/phonegap-3.0.0-0.14.4.tgz
+npm http 200 https://registry.npmjs.org/phonegap/-/phonegap-3.0.0-0.14.4.tgz
+npm http GET https://registry.npmjs.org/node-static/0.7.0
+.....
+DONE
+</code></pre>			
+
+			</section>	
+			
+			
+			
+			<section>
+					<h2>PhoneGap - Creating an app</h2>
+<pre><code data-trim contenteditable>
+phonegap create hello com.example.hello HelloWorld
+phonegap build android
+</code></pre>			
+
+<p>And an APK is built</p>
+
+<pre><code data-trim contenteditable>
+find . | grep apk
+./platforms/android/bin/HelloWorld4-debug-unaligned.apk
+./platforms/android/bin/HelloWorld4-debug-unaligned.apk.d
+./platforms/android/bin/HelloWorld4-debug.apk
+</code></pre>			
+
+			</section>				
+			
+			<section>
+					<h2>PhoneGap - Creating an app</h2>
+					<p>The same can be done using the standard open-source Cordova command line</p>
+<pre><code data-trim contenteditable>
+cordova create hello3 com.example.hello3 "HelloWorld3"
+cd hello3/
+cordova platform add android
+cordova platform add android
+cordova build
+cordova run
+
+adb install ./platforms/android/bin/HelloWorld3-debug.apk
+</code></pre>		
+
+			</section>				
+				
+				
+				
+			<section>
+					<h2>PhoneGap - Access native features</h2>
+					<p>
+					Question : How can I access native features through PhoneGap
+					</p>
+					
+					<div class="fragment" >
+						<p>Answer : Install the corresponding plugin (ex: device plugin)</p>
+
+<pre><code data-trim contenteditable>
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
 </code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Mobileappdevelopmentpresentation maintained by <a href="https://github.com/ddewaele">ddewaele</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-44524967-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+</div>
+					
+					<div class="fragment">
+					<p>Notice how the config.xml gets updated </p>
+					
+<pre><code data-trim contenteditable>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+</code></pre>
+</div>
+			
+					
+					<div class="fragment">
+					<p>And the AndroidManifest.xml</p>
+					
+<pre><code data-trim contenteditable>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" /></code></pre>
+</div>			
+					
+			</section>	
 
 
-  </body>
+
+
+			<section>
+					<h2>PhoneGap debugging</h2>
+					<p>
+					Question : If our mobile webapp is running inside a mobile device, how can we debug it ?
+					</p>
+					<div class="fragment" >
+					<p>Answer : Inject some javascript into your app</p>
+<pre><code data-trim contenteditable>
+<script src="http://debug.phonegap.com/target/target-script-min.js#r4nd0m2"></script>
+</code></pre>
+</div>
+					
+					<div class="fragment">
+					<p>Goto the following URL </p>
+					
+<pre><code data-trim contenteditable>
+http://debug.phonegap.com/client/#r4nd0m2
+</code></pre>
+</div>
+					
+			</section>	
+			
+			
+			<section>
+					<h2>PhoneGap debugging</h2>
+					
+					<img src="./images/phonegap-debugging.png"  border="0">
+
+			</section>				
+
+<section data-background="#007777">
+
+			<h2>Some Case Studies</h2>
+
+</section>
+
+			<section>
+					<h2>Case Study : Facebook</h2>
+					
+					<p style="float:left">Went from hybrid to native</p>
+
+<ul>
+<li>Zuckerberg admitted that it was the company’s “biggest strategic mistake” to go with HTML5 instead of a native app.</li>
+<li>Getting speed & smoothness right no mobile platforms proved to be very difficult</li>
+<li>Noticed a wider industry move away from HTML5 technology</li>
+</ul>
+					<img src="./images/facebook-logo.jpg" style="float:right" />
+
+
+			</section>
+
+			<section>
+					<h2>Case Study : LinkedIn</h2>
+					
+					<p style="float:left">Went from hybrid to native</p>
+
+<ul>
+<li>Getting animations and smoothness right turned out to be very difficult.</li>
+<li>Issues encountered : Tooling was lacking
+<ul>
+	<li>Debugging</li>
+	<li>Memory analysis</li>
+	<li>Operational</li>
+	<li>Runing Diagnostics</li>
+</ul>
+</li>
+</ul>
+					<img src="./images/linkedin.gif" style="float:right" />
+
+
+			</section>
+			
+<section>
+					<h2>Case Study : Xero</h2>
+					
+					<p style="float:left">Went from hybrid to native</p>
+
+<ul>
+<li>The development was resource intensive and difficult.</li>
+<li>Worked with Sencha‘s development tools to build its apps</li>
+<li><i>"building a complicated mobile application in HTML5 has been hard"</i></li>
+<li>There are no "out-of-the-box" "as-good-as-native" experiences</li>
+
+</ul>
+					<img src="./images/xero_logo.jpg" style="float:right" />
+
+
+			</section>					
+			
+			<section>
+					<h2>Case Study : Untappd</h2>
+					
+					<p style="float:left">Went from mobile webapp to Hybrid</p>
+
+<ul>
+<li>Launched with a mobile web app built in jQuery Mobile</li>
+<li>Wanted to have a native app in the AppStore</li>
+<li>Packaged their jQueryMobile based webapp into a PhoneGap app</li>
+</ul>
+					<img src="./images/untapped-logo.png" style="float:right" />
+
+				
+			</section>		
+			
+			<section>
+					<h2>Case Study : Financial Times</h2>
+					
+					<p style="float:left">Sticking with mobile webapps</p>
+
+<ul>
+<li>Release updates instantly</li>
+<li>Not bound to rules or restrictions related to app submission</li>
+<li>Bookmarking</li>
+<li>Deploy exactly the same code to every browser, on every device. </li>
+<li>No need to build a separate app for each platform.</li>
+</ul>
+					<img src="./images/ft_logo.jpg" style="float:right" />
+
+
+			</section>		
+			
+	
+			<section data-background="#007777">
+					<h2>Conclusions</h2>
+					
+					<p>So how do we conclude on all of this ?</p>
+
+			</section>	
+			
+
+			<section>
+					<h2>We see shifts from Hybrid to Native</h2>
+			
+						<ul>
+							<li>Facebook</li>
+							<li>LinkedIn</li>
+							<li>Xero</li>							
+						</ul>			
+			</section>	
+			
+			<section>
+					<h2>No ideal way of doing it (cliché)</h2>
+					<p>You need to look at it on a case-by-case basis</p>
+			
+			</section>			
+
+			
+			<section>
+					<h2>Prototype</h2>
+			
+						<ul>
+							<li>Take some time to prototype.</li>
+							<li>Learn web-based technologies.</li>
+							<li>The JavaScript / CSS you need for mobile is not the same as what you need for desktop web development.</li>							
+						</ul>			
+			</section>					
+
+			<section>
+					<h2>Test test test</h2>
+			
+						<ul>
+							<li>Make sure to test your app on as many devices as possible.</li>
+							<li>Especially on Android.</li>
+							<li>Make sure you have a dozen or so mobile devices available.</li>							
+							<li>Involve your collegues / friends / .....</li>
+						</ul>			
+			</section>	
+			
+
+
+				<section>
+					<h1>THE END</h1>
+					<h3>By <a href="http://about.me/ddewaele">Davy De Waele</a></h3>
+				</section>
+				
+				
+				<section  data-background="#007777">
+					<h1>Q & A</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
 </html>
