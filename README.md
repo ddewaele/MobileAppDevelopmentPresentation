@@ -2,6 +2,8 @@
 
 Talk I gave for [WAJUG](http://wajug.be), the Walloon Java User Group on Mobile development strategies.
 
+The presentation can be [viewed here through Github Pages](ddewaele.github.io/MobileAppDevelopmentPresentation).
+
 ####Talk Title
 Mobile development strategies - The Good, the Bad and the Uglies....
 
